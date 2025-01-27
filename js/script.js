@@ -232,7 +232,6 @@ if (window.location.pathname.includes("checkout.html")) {
         return arrivalDate.toLocaleDateString();
     }
 
-    // Show Order Confirmation Popup
     if (confirmOrderBtn) {
         confirmOrderBtn.addEventListener("click", () => {
             if (cart.length === 0) {
@@ -254,7 +253,6 @@ if (window.location.pathname.includes("checkout.html")) {
         });
     }
 
-    // Close Popup
     const closeOrderPopupBtn = document.querySelector(".close-popup-btn");
     if (closeOrderPopupBtn) {
         closeOrderPopupBtn.addEventListener("click", () => {
@@ -328,6 +326,59 @@ if (window.location.pathname.includes("listing.html")){
         listingPopup.style.display = 'none';
     });
 }
+
+// Account Feature
+if (window.location.pathname.includes("account.html")) {
+    const setupPaymentBtn = document.getElementById("setupPaymentBtn");
+    const viewPaymentBtn = document.getElementById("viewPaymentBtn");
+    const listItemBtn = document.querySelector(".list-item-btn"); 
+    const setupPaymentPopup = document.getElementById("setupPaymentPopup");
+    const viewPaymentPopup = document.getElementById("viewPaymentPopup");
+    const paymentDetailsPopup = document.getElementById("paymentDetailsPopup");
+
+    const popupCloseButtons = document.querySelectorAll(".popup-close");
+
+    const showPopup = (popup) => {
+        popup.style.display = "flex";
+    };
+
+    const hidePopup = (popup) => {
+        popup.style.display = "none";
+    };
+
+    setupPaymentBtn.addEventListener("click", () => {
+        showPopup(setupPaymentPopup);
+    });
+
+    viewPaymentBtn.addEventListener("click", () => {
+        showPopup(viewPaymentPopup);
+    });
+
+    popupCloseButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const popup = e.target.closest(".popup");
+            hidePopup(popup);
+        });
+    });
+
+    listItemBtn.addEventListener("click", () => {
+        window.location.href = "listing.html";
+    });
+
+    const paymentMethodButtons = viewPaymentPopup.querySelectorAll(".popup-btn:not(.popup-close)");
+
+    paymentMethodButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            document.getElementById("detailsCardName").textContent = `Card Name ${index + 1}`;
+            document.getElementById("detailsCardType").textContent = `Card Type ${index + 1}`;
+            document.getElementById("detailsCardNumber").textContent = `XXXX-XXXX-XXXX-${index + 1}111`;
+            document.getElementById("detailsCardExpiry").textContent = "12/25";
+            document.getElementById("detailsCardCVV").textContent = "123";
+
+            showPopup(paymentDetailsPopup);
+        });
+    });
+};
 
 // Go to SignUp
 document.getElementById("goToSignUp").addEventListener("click", function(event) {

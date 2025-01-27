@@ -548,3 +548,71 @@ label {
 .post-listing-btn:hover {
     background-color: #45a049;
 }
+
+/****************************************************************************************************************/
+/* ACCOUNT PAGE (account.html) */
+/****************************************************************************************************************/
+.account-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 45rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-details label {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.account-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    margin-bottom: 1rem;
+}
+
+.account-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.account-btn {
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 0.5rem;
+}
+
+.account-btn:hover {
+    background-color: #0056b3;
+}
+
+.list-item-btn {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.list-item-btn:hover {
+    background-color: #1e7e34;
+}
