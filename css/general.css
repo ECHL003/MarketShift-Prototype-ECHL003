@@ -25,14 +25,6 @@ body {
     font-family: "Readex Pro" ,sans-serif !important;
     line-height: 1;
     font-weight: 400;
-<<<<<<< Updated upstream
-    overflow-x: hidden;
-    background-image: url('../assets/back-img-3.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 0;
-=======
     overflow-x: hidden; 
     padding-top: 0;
     background-size: cover;
@@ -62,7 +54,6 @@ body {
 
 .checkout-page {
     background-image: url('../assets/back-img-6.jpg');
->>>>>>> Stashed changes
 }
 
 .header {
